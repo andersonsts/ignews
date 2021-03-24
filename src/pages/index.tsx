@@ -14,9 +14,9 @@ interface HomeProps {
 }
 
 /**
- * client-side => informacao que n precisa ser carregada assim que a pagina eh exibida em tela
- * server-side => indexacao com dados dinamicos
- * static site generation => indexacao e com dados que n mudam constantemente
+ * client-side
+ * server-side 
+ * static site generation
  */
 
 const Home = ({ product }: HomeProps) => {
@@ -46,7 +46,7 @@ const Home = ({ product }: HomeProps) => {
 export const getStaticProps: GetStaticProps = async () => {
   // const price = await stripe.prices.retrieve(PRICE_KEY, {
     //   expand: ['product']
-    // }) // traz as info do produto...
+    // }) // get product info...
   
   const PRICE_KEY = 'price_1IXxWtHStbpl6uHI8FkvYJeO'
   const price = await stripe.prices.retrieve(PRICE_KEY)
@@ -56,7 +56,7 @@ export const getStaticProps: GetStaticProps = async () => {
     amount: new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD'
-    }).format(price.unit_amount / 100) // esse preço vem em centavos
+    }).format(price.unit_amount / 100) // price in cents
   }
 
   const ONE_DAY = 60 * 60 * 24
@@ -65,7 +65,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       product
     },
-    revalidate: ONE_DAY // Qunato tempo em segundos essa pagina ficara sem ser "revalidata"/reconstruida
+    revalidate: ONE_DAY
   }
 }
 

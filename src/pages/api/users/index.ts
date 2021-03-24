@@ -11,9 +11,7 @@ const users = (request: NextApiRequest, response: NextApiResponse) => {
 
 export default users;
 
-/** Formas de autenticacao */
+/** Ways of auth */
 // JWT (Storage)
 // Next Auth (Social, ...)
-// Cognito, Auth0 -> Providers externos
-
-// Serverless => Toda vez que essa rota api/users é chamada, o ambiente retorna o resultado e logo após o ambiente é deletado.
+// Cognito, Auth0 -> Others Providers

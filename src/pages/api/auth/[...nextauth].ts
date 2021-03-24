@@ -48,6 +48,3 @@ export default NextAuth({
     }
   }
 })
-
-// FaunaDB ou DynamoDB -> As operações nesse DB não precisam de uma conexão ativa para realizar tal operação. Postgress e mongoDB por exemplo, 
-// tem um custo maior para realizar tal conexão enquanto o FaunaDB nao tem. 

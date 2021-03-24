@@ -7,7 +7,6 @@ interface SubscribeButtonProps {
   priceId: string;
 }
 
-// Requisicoes com chaves secretas devem ser feitas: 
 // getServerSideProps (SSR)
 // getStaticProps (SSG)
 // API routes
