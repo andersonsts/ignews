@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
+import { Session } from "next-auth";
 import { getSession, useSession } from "next-auth/client";
 import Head from "next/head";
 import Link from "next/link";
@@ -17,6 +18,10 @@ interface PostPreviewProps {
     content: string;
     updatedAt: string;
   }
+}
+
+interface Props extends Session {
+  activeSubscription?: null | object
 }
 
 const PostPreview = ({ post }: PostPreviewProps) => {
@@ -56,9 +61,11 @@ const PostPreview = ({ post }: PostPreviewProps) => {
   )
 }
 
-export const getStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: [],
+    paths: [
+      { params: { slug: 'next.js---novidades-na-versao-10-e-atualizacao-do-blog' } }
+    ],
     fallback: 'blocking'
   }
 }
@@ -84,7 +91,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       post
-    }
+    },
+    revalidate: 60 * 30, // 30 minutes
   }
 }
 

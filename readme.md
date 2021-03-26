@@ -20,3 +20,8 @@
 `yarn add prismic-dom`
 
 // console.log('response =>', JSON.stringify(response, null, 2))
+
+# FORMAS DE GERACAO ESTATICA NO NEXT JS:
+- Gerar as paginas estaticas durante a build
+- Gerar a pagina estática no primeiro acesso
+- Junção deles
