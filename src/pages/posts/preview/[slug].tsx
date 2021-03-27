@@ -1,11 +1,11 @@
+import { useEffect } from "react";
+
 import { GetStaticPaths, GetStaticProps } from "next";
-import { Session } from "next-auth";
-import { getSession, useSession } from "next-auth/client";
+import { useSession } from "next-auth/client";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { RichText } from "prismic-dom";
-import { useEffect } from "react";
 
 import { getPrismicClient } from "../../../services/prismic";
 
@@ -18,10 +18,6 @@ interface PostPreviewProps {
     content: string;
     updatedAt: string;
   }
-}
-
-interface Props extends Session {
-  activeSubscription?: null | object
 }
 
 const PostPreview = ({ post }: PostPreviewProps) => {
@@ -63,10 +59,8 @@ const PostPreview = ({ post }: PostPreviewProps) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: [
-      { params: { slug: 'next.js---novidades-na-versao-10-e-atualizacao-do-blog' } }
-    ],
-    fallback: 'blocking'
+    paths: [],
+    fallback: 'blocking' 
   }
 }
 
