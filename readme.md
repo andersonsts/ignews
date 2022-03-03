@@ -1,25 +1,25 @@
-## By default, NextJS do SSR
+## By default, NextJS uses SSR
 - `yarn add typescript @types/react @types/node -D`
 - `yarn add sass`
 - `yarn add stripe`
 - `yarn add faunadb`
 
-# Headless CMS (Painel de administração + API HTTP, GraphQL, SDK)
-- Strapi (Blog, E-commerce, gratuito etc - Tem alguns bugs)
+# Headless CMS (Administrative panel + API HTTP, GraphQL, SDK)
+- Strapi (Blog, E-commerce, free)
 - Ghost (Blog)
 - Keystone
 
 - GraphCMS
-- Primic CMS - Muito bom e tem bons preços
-- Contentful - CMS muito robusto
+- Primic CMS - Has great pricing
+- Contentful - CMS with many features
 
-- Shopify - Usado para E-commerce
-- Saleor - Usado para E-commerce
+- Shopify - Used for E-commerce
+- Saleor - Used for E-commerce
 
 - `yarn add @prismicio/client`
 - `yarn add prismic-dom`
 
-# FORMAS DE GERACAO ESTATICA NO NEXT JS:
-- Gerar as paginas estaticas durante a build
-- Gerar a pagina estática no primeiro acesso
-- Junção deles
+# STATIC GENERATION NEXT JS:
+- Generate static pages during build time
+- Generate static page in the first access
+- Join of both above
