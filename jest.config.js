@@ -13,7 +13,9 @@ module.exports = {
   collectCoverage: true,
   'collectCoverageFrom': [
     "src/**/*.{tsx}",
-    "!src/**/*.spec.{tsx}" // exclude this files of coverage
+    "!src/**/*.spec.{tsx}", // exclude this files of coverage
+    "!src/**/_app.tsx",
+    "!src/**/_document.tsx",
   ],
   coverageReporters: ["lcov", "json"]
 }
